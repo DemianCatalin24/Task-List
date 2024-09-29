@@ -1,0 +1,190 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+:root {
+  --dark: rgba(4, 3, 3, 0.344);
+  --darker: rgb(25, 25, 25);
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom left,
+    rgb(20, 20, 21),
+    rgb(149, 95, 95),
+    rgb(36, 78, 183)
+  );
+  color: white;
+}
+
+header {
+  padding: 2rem 1rem;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 550;
+  margin-bottom: 1rem;
+  color: var(--darker);
+}
+#task-form {
+  display: flex;
+}
+
+input,
+button {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+#task-input {
+  flex: 1 1 0%;
+  background-color: var(--darker);
+  padding: 1rem;
+  border-radius: 2rem;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  color: gray;
+}
+
+#task-input::placeholder {
+  color: gray;
+}
+
+#task-submit {
+  background-color: var(--darker);
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 1rem;
+  border-radius: 2rem;
+  color: grey;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+#task-submit:hover {
+  opacity: 0.8;
+}
+
+#task-submit:active {
+  opacity: 0.6;
+}
+
+main {
+  flex: 1 1 0%;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.task-list .done {
+  padding: 1rem;
+}
+
+.task-list .done h2 {
+  font-size: 1.5rem;
+  font-weight: 450;
+  color: rgb(232, 224, 224);
+  margin-bottom: 1rem;
+}
+
+#tasks .task {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(22, 44, 37);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+#tasks .task .content {
+  flex: 1 1 0%;
+}
+#tasks .task .content .text {
+  color: whitesmoke;
+  font-size: 1.25rem;
+  width: 100%;
+  display: block;
+  transition: 0.4s;
+}
+
+.task .actions {
+  display: flex;
+  margin: 0 -0.5rem;
+}
+
+.task .actions button {
+  cursor: pointer;
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: aqua;
+  text-transform: uppercase;
+}
+
+.task .actions .edit {
+  color: rgb(58, 134, 134);
+}
+.task .actions .edit:hover {
+  opacity: 0.8;
+}
+
+.task .actions .delete {
+  color: red;
+}
+.task .actions .delete:hover {
+  opacity: 0.8;
+}
+
+.task .actions .undo {
+  color: rgb(154, 20, 157);
+}
+
+#tasks .task .content .text:not(:read-only) {
+  color: brown;
+}
+.task .actions .check {
+  color: green;
+}
+.task .actions .check:hover {
+  opacity: 0.8;
+}
+
+#task-done .task {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(22, 44, 37);
+  opacity: 0.7;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+#task-done .task .content {
+  flex: 1 1 0%;
+}
+#task-done .task .content .text {
+  color: rgb(135, 198, 86);
+  font-size: 1.25rem;
+  font-weight: bold;
+  width: 100%;
+  display: block;
+  transition: 0.4s;
+}
+
+.done {
+  display: none;
+}
+
+.task-list {
+  display: none;
+}
